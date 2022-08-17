@@ -1,0 +1,106 @@
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+      :root {
+        --corPrincipal: #1b3d26;
+        --textColor: rgb(237, 236, 227);
+      }
+      body {
+        background-color: var(--corPrincipal);
+        font-family: 'Open Sans', sans-serif;
+      }
+      .header {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        height: 12vh;
+        width: 100%;
+        color: var(--textColor);
+
+        font-family: 'Rubik', sans-serif;
+        font-family: 'Square Peg', cursive;
+        font-size: 60px;
+      }
+      .main {
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+
+        margin-top: 5vh;
+
+        height: 84vh;
+        gap: 6vh;
+      }
+      .main .inputs {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+
+        gap: 6vh;
+      }
+      input {
+        border: none;
+        border-bottom: 1px solid whitesmoke;
+        padding: 0.7vw;
+
+        transition: width 0.3s ease-in-out;
+
+        width: 70vw;
+
+        background-color: var(--corPrincipal);
+        color: white;
+        outline: none;
+      }
+      input:focus {
+        width: 75vw;
+      }
+      ::placeholder {
+        font-size: 17px;
+        color: whitesmoke;
+      }
+      main form #forgetPassword {
+        font-size: 17px;
+        color: #3cba92;
+      }
+      .bn632-hover {
+        width: 75vw;
+        font-size: 16px;
+        font-weight: 600;
+        color: #fff;
+        cursor: pointer;
+        height: 6vh;
+        text-align: center;
+        border: none;
+        background-size: 300% 100%;
+        border-radius: 50px;
+        -o-transition: all 0.4s ease-in-out;
+        -webkit-transition: all 0.4s ease-in-out;
+        transition: all 0.4s ease-in-out;
+      }
+
+      .bn632-hover:hover {
+        background-position: 100% 0;
+        -o-transition: all 0.4s ease-in-out;
+        -webkit-transition: all 0.4s ease-in-out;
+        transition: all 0.4s ease-in-out;
+      }
+
+      .bn632-hover:focus {
+        outline: none;
+      }
+
+      .bn632-hover.bn22 {
+        transition: width 0.3s ease-in-out;
+        background-image: linear-gradient(
+          to right,
+          #0ba360,
+          #3cba92,
+          #30dd8a,
+          #2bb673
+        );
+        box-shadow: 0 4px 15px 0 rgba(23, 168, 108, 0.75);
+      }

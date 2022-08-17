@@ -1,0 +1,61 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no, viewport-fit=cover">
+  <meta http-equiv="Content-Security-Policy" content="default-src * data: gap: https://ssl.gstatic.com; style-src * 'unsafe-inline'; script-src * 'unsafe-inline' 'unsafe-eval'">
+  <script src="components/loader.js"></script>
+  <link rel="stylesheet" href="components/loader.css">
+  <link rel="stylesheet" href="css/style.css">
+  <!-- links -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Rubik&family=Square+Peg&display=swap" rel="stylesheet"/>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400&display=swap" rel="stylesheet" />
+</head>
+<body>
+    <div class="tamanho">
+      <header class="header">
+        <div class="textLogo"><span>AdInfinitum</span></div>
+      </header>
+    <main class="main">
+      <div class="img">
+        <a href="pagesHtml/pageMain.html"
+          ><img src="css/img/logo.png" alt="Livro svg" width="225px"
+        /></a>
+      </div>
+      <form action="" method="POST" id="entrar" class="inputs">
+        <input type="email" name="login" id="login" placeholder="Digite seu email:" />
+        <input
+          type="password"
+          name="senha"
+          id="senha"
+          placeholder="Digite sua senha:"
+        />
+        <a href="#" id="forgetPassword">Esqueceu sua senha?</a>
+        <button class="bn632-hover bn22">Entrar</button>
+      </form>
+    </main>
+    <script>
+        let form = document.getElementById('entrar');
+        let login = document.getElementById('login');
+        let senha = document.getElementById('senha');
+
+        form.addEventListener('click', ()=>{
+            let formData = new FormData();
+            formData.append('login', `${login.value}`);
+            formData.append('login', `${senha.value}`);
+            fetch('http://adinfinutum.profrodolfo.com.br/usuario.php',
+            {
+                body: formData,
+                method: 'POST',
+                mode: 'cors',
+                cache: 'default'
+            }
+            ).then(res=> {res.json().then(data=>{
+                alert(data.dados.nome);
+            })})
+        });
+    </script>
+  </body>
+</html>
