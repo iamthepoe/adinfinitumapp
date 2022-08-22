@@ -24,7 +24,7 @@
           ><img src="css/img/logo.png" alt="Livro svg" width="225px"
         /></a>
       </div>
-      <form action="" method="POST" id="entrar" class="inputs">
+      <form  id="entrar" class="inputs">
         <input type="email" name="login" id="login" placeholder="Digite seu email:" />
         <input
           type="password"
@@ -44,7 +44,7 @@
         form.addEventListener('click', ()=>{
             let formData = new FormData();
             formData.append('login', `${login.value}`);
-            formData.append('login', `${senha.value}`);
+            formData.append('senha', `${senha.value}`);
             fetch('http://adinfinutum.profrodolfo.com.br/usuario.php',
             {
                 body: formData,
@@ -52,9 +52,15 @@
                 mode: 'cors',
                 cache: 'default'
             }
-            ).then(res=> {res.json().then(data=>{
-                alert(data.dados.nome);
-            })})
+            ).then(res=>{
+              res.json().then(data=>{
+                if(data.dados.erros){
+                  alert('error');
+                }else{
+                  alert(data.dados.nome);
+                }
+              });
+            }); 
         });
     </script>
   </body>
