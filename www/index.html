@@ -28,8 +28,8 @@
         <input type="email" name="login" id="login" placeholder="Digite seu email:" />
         <input type="password" name="senha" id="senha" placeholder="Digite sua senha:"/>
         <a href="#" id="forgetPassword">Esqueceu sua senha?</a>
-        <button class="bn632-hover bn22" id="btn">Entrar</button>
       </form>
+      <button class="bn632-hover bn22" id="btn">Entrar</button>
     </main>
     <div id="conteudo"></div>
     <script>
@@ -41,7 +41,7 @@ btn.addEventListener('click', ()=>{
     let formData = new FormData();
     formData.append('login', `${login.value}`);
     formData.append('senha', `${senha.value}`);
-    fetch('https://adinfinutum.profrodolfo.com.br/usuario.php',
+    fetch('https://adinfinutum.profrodolfo.com.br/mobile/usuario.php',
     {
         body: formData,
         method: 'POST',
@@ -53,7 +53,7 @@ btn.addEventListener('click', ()=>{
                 alert('Usuário e/ou senha incorretos!');
             }else{
                 alert('Login feito com sucesso' + data.dados.nome);
-                window.location.href = "acervo.html";
+                location.href = 'acervo.html';
             }
         })})
     });
