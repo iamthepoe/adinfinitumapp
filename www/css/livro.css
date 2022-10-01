@@ -1,0 +1,68 @@
+.livro{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 80vh;
+}
+
+.livro-box{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 70vh;
+}
+
+.livro-sinopse{
+    color: #fff;
+    font-size: 0.9rem;
+    text-align: center;
+    margin-top: 1.2rem;
+    width: 80%;
+    height: 20vh;
+    border: 1px solid rgb(34, 33, 33);
+    background-color: rgba(0, 0, 0, 0.774);
+    overflow: auto;
+}
+.livro-opcoes{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+.livro-opcoes button{
+    margin-top: 10px;
+}
+
+/* Button */
+    .button-24 {
+    background: #FF4742;
+    border: 1px solid #FF4742;
+    border-radius: 6px;
+    box-shadow: rgba(0, 0, 0, 0.1) 1px 2px 4px;
+    box-sizing: border-box;
+    color: #FFFFFF;
+    cursor: pointer;
+    display: inline-block;
+    font-family: nunito,roboto,proxima-nova,"proxima nova",sans-serif;
+    font-size: 16px;
+    font-weight: 800;
+    line-height: 16px;
+    min-height: 40px;
+    outline: 0;
+    padding: 12px 14px;
+    text-align: center;
+    text-rendering: geometricprecision;
+    text-transform: none;
+    user-select: none;
+    -webkit-user-select: none;
+    touch-action: manipulation;
+    vertical-align: middle;
+    }
+    .button-24:hover,
+    .button-24:active {
+    background-position: 0 0;
+    color: #523e3d;
+    }
+
+    .button-24:active {
+    opacity: .5;
+    }

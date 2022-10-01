@@ -1,0 +1,53 @@
+*{
+    margin: 0;
+    padding:0;
+    box-sizing: border-box;
+}
+
+::placeholder { 
+  color: #0f0f0f;
+  opacity: 0.85; /* Firefox */
+}
+
+body{
+    background-color: rgb(240, 238, 238);
+}
+.header{
+    display: flex;
+    width: 100%;
+    height: 10vh;
+    background-color: rgba(27, 27, 27, 0.9);
+    justify-content: space-around;
+}
+
+.userbox{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 25%;
+    height: 100%;
+}
+
+
+.userbox > img{
+    border-radius: 200px;
+    width: 60px;
+    height: 60px;
+}
+
+.search{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 10vh;
+}
+
+.search-box > input{
+    height: 5vh;
+    color: #000;
+    border-color: rgb(131, 129, 129);
+    font-size: 1.2rem;
+    background-color: #fff;
+    text-align: center;
+}
+
