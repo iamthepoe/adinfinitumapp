@@ -29,34 +29,13 @@
         <input type="password" name="senha" id="senha" placeholder="Digite sua senha:"/>
         <a href="#" id="forgetPassword">Esqueceu sua senha?</a>
       </form>
+      
       <button class="bn632-hover bn22" id="btn">Entrar</button>
     </main>
     <div id="conteudo"></div>
-    <script>
-        let btn = document.getElementById('btn');
-        let login = document.getElementById('login');
-        let senha = document.getElementById('senha');
-
-btn.addEventListener('click', ()=>{
-    let formData = new FormData();
-    formData.append('login', `${login.value}`);
-    formData.append('senha', `${senha.value}`);
-    fetch('https://adinfinutum.profrodolfo.com.br/mobile/usuario.php',
-    {
-        body: formData,
-        method: 'POST',
-        mode: 'cors',
-        cache: 'default'
-    }
-        ).then(res=> {res.json().then(data=>{
-            if(data.erro){
-                alert('Usuário e/ou senha incorretos!');
-            }else{
-                alert('Login feito com sucesso' + data.dados.nome);
-                location.href = 'acervo.html';
-            }
-        })})
-    });
+    <script src="components/script.js">
     </script>
   </body>
 </html>
+
+

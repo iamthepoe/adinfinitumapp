@@ -2,7 +2,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 80vh;
+    height: 100vh;
 }
 
 .livro-box{
@@ -34,8 +34,8 @@
 
 /* Button */
     .button-24 {
-    background: #FF4742;
-    border: 1px solid #FF4742;
+    background: #1b3d26;
+    border: 1px solid #FFF;
     border-radius: 6px;
     box-shadow: rgba(0, 0, 0, 0.1) 1px 2px 4px;
     box-sizing: border-box;
@@ -56,13 +56,14 @@
     -webkit-user-select: none;
     touch-action: manipulation;
     vertical-align: middle;
+    transition: 2s;
     }
     .button-24:hover,
     .button-24:active {
     background-position: 0 0;
-    color: #523e3d;
+    text-decoration: underline;
     }
 
     .button-24:active {
-    opacity: .5;
+        opacity: .5;
     }

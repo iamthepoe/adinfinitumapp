@@ -1,6 +1,12 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700&display=swap');
 
-.conteudo {
+.container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+#conteudo {
     display: flex;
     justify-content: center;
     flex-wrap: wrap;
@@ -57,14 +63,10 @@
     border-radius: 4px;
     transition: all 0.3s ease;
     color: #fff;
-    background: #35187f;
+    background: #0ba360;
 }
 
 img {
     margin-top: 1rem;
     width: 8rem;
-}
-#conteudo{
-    display: flex;
-    flex-direction: row;
 }

@@ -28,7 +28,7 @@
         <!--<button id="deslogar">Deslogar</button>-->
         <header class="header">
             <div class="userbox">
-                   <img  src="https://adinfinutum.profrodolfo.com.br/img/perfis" id="perfilimg" onclick="redirectUser()">
+                    <img  src="https://adinfinutum.profrodolfo.com.br/img/perfis" id="perfilimg">
                     <script>
                         document.getElementById('perfilimg').src = `https://adinfinutum.profrodolfo.com.br/img/perfis/${JSON.parse(localStorage.usuario).perfil}`
                     </script>
@@ -41,7 +41,7 @@
                 <div class="livro-titulo">
                     <h3>
                         <script>
-                            document.write(`<h3>${(JSON.parse(localStorage.livro)).titulo}</h3>`);
+                            document.write(`<h3>${(JSON.parse(localStorage.usuario)).nome}</h3>`);
                         </script>
                     </h3>
                 </div>
@@ -49,61 +49,40 @@
                     <img id="img" src="">
                     <script>
                         let a = document.getElementById('img');
-                        let livro = JSON.parse(localStorage.livro);
-                        a.src = `https://adinfinutum.profrodolfo.com.br/img/capas/${livro.capa}`;
+                        let usuario = JSON.parse(localStorage.usuario);
+                        a.src = `https://adinfinutum.profrodolfo.com.br/img/perfis/${usuario.perfil}`;
                     </script>
+                    
                 </div>
-                <div style="width:100vw; height:0.2vh; background-color:black; margin-top:10px;"></div>
-                <div class="livro-opcoes">
-                    <button class="button-24" role="button">Favoritar</button>
-                    <button class="button-24" role="button">Empréstimo</button>
-                    <button class="button-24" role="button">Sinopse</button>
-                    <button class="button-24" role="button">Avaliar</button>
+                <br>
+                <h3>RM: <script>document.write(JSON.parse(localStorage.usuario).rm)</script></h3>
+                <br>
+                <h3>Email: <script>document.write(JSON.parse(localStorage.usuario).email)</script></h3>
+                <br>
+                <h3>Telefone: <script>document.write(JSON.parse(localStorage.usuario).telefone)</script></h3>
+                <br>
+                <div style="width:100vw; height:0.2vh; background-color:black; margin-top:10px;">
+                    
                 </div>
                 
-                <div class="livro-sinopse" hidden>
-                    <script>
-                        document.write(`<br><p>${(JSON.parse(localStorage.livro)).sinopse}</p><br><p style="text-decoration:underline; cursor:pointer;" id="info">Mais informações</p><br>`);
-
-                    </script>
+                <div class="livro-opcoes">
+                    <button class="button-24" role="button" onclick="Deslogar()">Deslogar</button>
                 </div>
+                
+                
             </div>
         </section>
     </div>
     
     <script src="components/search.js"></script>
     <script>
-        var json = JSON.parse(localStorage.livro);
-        var sinopsebtn = document.querySelectorAll('.button-24')[2];
-        var sinopse = document.querySelector('.livro-sinopse');
-        var info = document.querySelector('#info');
-        sinopsebtn.addEventListener('click', ()=>{
-             sinopse.hidden ? sinopse.hidden = false : sinopse.hidden = true;
-        });
-
-        function alertDismissed() {
-            // do something
+        function Deslogar(){
+            localStorage.removeItem('usuario');
+            location.href = 'index.html';
         }
-        
-        info.addEventListener('click', ()=>{
-            navigator.notification.alert(
-                `
-                Título: ${json.titulo}
-                ISBN: ${json.isbn}
-                Ano: ${json.ano}
-                Classificação: ${json.classificacao}
-                Estado: ${json.estado}
-                `,  // message
-                alertDismissed,         // callback
-                'Informações do livro',            // title
-                'Sair'                  // buttonName
-            );
-        });
     </script>
     <script>
-        function redirectUser(){
-            location.href = 'usuario.html';
-        }
+
     </script>
   </body>
 </html>
